@@ -13,7 +13,7 @@ public class App {
         // CRIAR OBJETO QUE RECEBE OS DADOS DO USUARIO
         Scanner sc = new Scanner(System.in);
 
-        // ENTADA DE DADOS
+        // ENTRADA DE DADOS
         System.out.println("INFORME SEU NOME:  ");
         nome = sc.nextLine();
         System.out.println("Informe a sua idade: ");
@@ -35,7 +35,7 @@ public class App {
         System.out.println("altura:" + altura +"metros");
         System.out.println("email:" + email);
 
-        // FECHA OBJETOgabriela
+        // FECHA OBJETO
 
         sc.close();
 
