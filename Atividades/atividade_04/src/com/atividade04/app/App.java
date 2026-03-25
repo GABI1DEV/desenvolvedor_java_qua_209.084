@@ -18,12 +18,15 @@ public class App {
         carro.cor = sc.nextLine();
         System.out.println("Informe o ano do seu carro: ");
         carro.ano = sc.nextLine();
-
-        sc.nextLine();
-        
         System.out.println("informe a placa do seu carro: ");
         carro.placa = sc.nextLine();
 
+        //SAIDA DE DADOS
+        System.out.println("Fabricante: " + carro.fabricante);
+        System.out.println("Modelo: " + carro.modelo);
+        System.out.println("Placa: " + carro.placa);
+        System.out.println("Cor: " + carro.cor);
+        System.out.println("Ano: " + carro.ano);
 
         sc.close();
     }
