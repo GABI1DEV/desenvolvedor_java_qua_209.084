@@ -17,7 +17,7 @@ public class App {
         System.out.println("Iforme a cor do seu carro: ");
         carro.cor = sc.nextLine();
         System.out.println("Informe o ano do seu carro: ");
-        carro.ano = sc.nextInt();
+        carro.ano = sc.nextLine();
 
         sc.nextLine();
         
