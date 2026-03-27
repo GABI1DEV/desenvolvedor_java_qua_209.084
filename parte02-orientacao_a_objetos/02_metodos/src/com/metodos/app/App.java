@@ -17,7 +17,7 @@ public class App {
         System.out.println("Informe o nome do aluno: ");
         aluno.nome = sc.nextLine();
 
-        System.out.println("Aluno.apresentar()");
+        System.out.println(aluno.apresentar());
 
         prof.nome = "Alex machado";
         prof.materia = "Matematica";
@@ -30,6 +30,9 @@ public class App {
         y = sc.nextDouble();
 
         System.out.println("A area do quadrilatero é " + prof.areaQuadrilatero(x,y));
+
+       
+
 
         sc.close();
     }

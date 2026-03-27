@@ -15,7 +15,7 @@ public class Pessoa {
         System.out.println("Ola, boa noite");
     }
     public void apresentar(){
-        System.out.println("Meu nome é " + this.nome + ", meu e-mail é " + this.email + ", tenho " + this.idade + " anos, e " + this.altura + " gbmetros de altura.");
+        System.out.println("Meu nome é " + this.nome + ", meu e-mail é " + this.email + ", tenho " + this.idade + " anos, e " + this.altura + " metros de altura.");
     }
 
 }
