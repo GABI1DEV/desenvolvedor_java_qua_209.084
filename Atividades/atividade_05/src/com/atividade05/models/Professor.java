@@ -9,16 +9,18 @@ public class Professor {
 
 //METODOS
 
-    public String darBoasVndas() {
-        return "Olá me chamo " + this.nome + " minha matricula e " + this.matricula + ".";
-
-    }
-
     public double areaDoTriangulo(double b, double h) {
         return (b*h)/2;
 
     }
-    
+
+    public double areaCirculo(double r){
+        return Math.PI*Math.pow(r,2);
+    }
+
+    public double equacao1ograu(double a, double b) {
+        return -b/a;
+    }
     
 
 
