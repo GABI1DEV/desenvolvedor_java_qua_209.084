@@ -10,10 +10,12 @@ public class App {
        Scanner sc = new Scanner(System.in); 
        Aluno aluno = new Aluno();
        Professor prof = new Professor();
-        double b = 0;
+
+       double b = 0;
        double h = 0;
        double r = 0;
        double a = 0;
+
        String opcao;
 
         prof.nome = "Alex machado";
@@ -43,7 +45,9 @@ public class App {
 
 
        switch (opcao) {
+
         case "1":
+            
             System.out.println("informe o valor da base: ");
             b = sc.nextDouble();
             System.out.println("informe o valor da altura: ");
@@ -52,20 +56,27 @@ public class App {
             System.out.println("A area do triangulo é : " + prof.areaDoTriangulo(b,h));
 
             break;
+
         case"2":
+
             System.out.println("Informe o valor do raio: ");
             r = sc.nextDouble();    
             System.out.println("A area do circulo é  " + prof.areaCirculo(r)); 
 
             break;
+
         case"3":
+
             System.out.println("Informe o valor de a: "); 
             a = sc.nextDouble();
             System.out.println("Informe o valor de b: "); 
             b = sc.nextDouble();
             System.out.println((a != 0) ? "A raiz da equacao do 1 grau é " + prof.equacao1ograu(a, b) : "coeficiente a nao pode ser 0. ");
+
             break;
+
         default:
+
             System.out.println("opercao invaslida.");
             
        }
