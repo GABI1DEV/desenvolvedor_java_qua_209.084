@@ -1,0 +1,19 @@
+//a partir da superclasse abstrata VEICULO, crie as subclasses finais:
+
+//  MOTO, CARRO, ONIBUS, CAMINHAO, todas no package models. 
+
+//Instacie cada uma das subclasses na classe principal, peça para o usuario
+
+// informar os seguintes atributos privados de um veiculo escolhido pelo propio
+
+//usuario: fabricante, modelo, cor, ano, placa. o atributo privados
+
+//categoria devera ser informado pelo proprio programa.
+
+//diferença entre as classes: carro tera bagageiro, onibus podera ser 
+
+//leito ou nao, e caminhao tera carroceria.
+
+//ao final o programa exibira os dados do veiculo escolhido por ele.
+
+//NOTE: utilize herança, abstarcao e encapisulamento para codar.
