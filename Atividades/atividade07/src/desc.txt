@@ -1,0 +1,21 @@
+//cire um programa de m aplicativo de banco: o usuario podera escolher se
+//deseja entar como pessoa fisica ou pessoa juridica,devera informar o
+//nome, email e cpf (classepessoafisica), ou nome fantasia,razao social
+//email e cnpj (classejuridica), e o programa devera informar a
+//agencia e conta (classe conta) do titular (os dados do ususario serao
+//setados uma unica vez durante o programa). em seguida o programa
+//devera exibir as opcoaes para o usuario:consultar dados da conta,fazer
+//saque, fazer deposito, sairdo programa. o programa devera  cobrar uma
+//taxa de 0,01% em cima de cada saque feito pela pessoa juridica.qualquer
+//saque so podera ser feito caso o valor do saque seja menor ou igual saldo da conta
+//note:use 4 pilares da orientacao a objeto, mais interface e composiçao
+
+
+ // CLASSE
+
+PESSOA
+PESSOA FISICA
+PESSOA JURIDICA
+CONTA
+CONTA PESSOA FISICA
+CONATA PESSOA JURIDICA

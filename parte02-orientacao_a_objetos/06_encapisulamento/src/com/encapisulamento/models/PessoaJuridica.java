@@ -1,6 +1,6 @@
 package com.encapisulamento.models;
 
-final public class PessoaJuridica extends Pessoa{
+final public class PessoaJuridica extends Pessoa {
 
     //ATRIBUTOS
     private String nomeFantasia;
