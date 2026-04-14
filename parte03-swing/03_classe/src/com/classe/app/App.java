@@ -1,0 +1,32 @@
+package com.classe.app;
+
+import javax.swing.JOptionPane;
+import com.classe.models.Pessoa;
+
+public class App {
+    public static void main(String[] args) throws Exception {
+
+        //INSTANCIA SE CLASSE PESSOA
+      
+        Pessoa pessoa = new Pessoa(null, null, null, 0, 0);
+
+        //ENTRADA DE DADOS
+
+        pessoa.setNome(JOptionPane.showInputDialog("Informe o nome: "));
+        pessoa.setIdade(Integer.parseInt(JOptionPane.showInputDialog("INforme a idade: ")));
+        pessoa.setAltura(Double.parseDouble(JOptionPane.showInputDialog("INforme a altura em metros: ").replace(",",".")));
+        pessoa.setCpf(JOptionPane.showInputDialog("Informe o CPF: "));
+        pessoa.setEmail(JOptionPane.showInputDialog("Informe o e-mail: "));
+
+        //SAIDA DE DADOS
+
+        JOptionPane.showMessageDialog(null,
+             "Nome: " + pessoa.getNome() +
+             "\nIdade: " + pessoa.getIdade() +
+             "\nAltura: " + pessoa.getAltura() +
+             "m\nCPF: " + pessoa.getCpf() +
+             "\nE-mail: " + pessoa.getEmail()
+        );
+
+    }
+}

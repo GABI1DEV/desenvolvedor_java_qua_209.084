@@ -4,15 +4,19 @@ public class PessoaJuridica extends Pessoa {
     //ATRIBUTOS
     private String razaoSocial;
     private String nomeFantasia;
+    private String cnpj; 
 
     //CONSTRUTOR
     public PessoaJuridica(String razaoSocial, String nomeFantasia, String cnpj, String email) {
         super(email);
         this.razaoSocial = razaoSocial;
         this.nomeFantasia = nomeFantasia;
+        this.cnpj = cnpj;
+
     }
 
-    //GETTERS E SETTERS
+
+
     public String getRazaoSocial() {
         return this.razaoSocial;
     }
@@ -29,5 +33,12 @@ public class PessoaJuridica extends Pessoa {
         this.nomeFantasia = nomeFantasia;
     }
 
+    public String getCnpj() {
+        return this.cnpj;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
 
 }

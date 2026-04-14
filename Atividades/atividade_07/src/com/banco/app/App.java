@@ -2,7 +2,7 @@ package com.banco.app;
 
 import java.util.Scanner;
 
-import com.banco.models.PessoaFiscica;
+import com.banco.models.PessoaFisica;
 
 import com.banco.models.PessoaJuridica;
 
@@ -10,85 +10,134 @@ import com.banco.models.ContaPF;
 
 import com.banco.models.ContaPJ;
 
-import com.banco.models.Pessoa;
-
-import com.banco.models.Conta;
-
 public class App {
     public static void main(String[] args) throws Exception {
-      //ATRIBUTOS
-         PessoaFiscica pf = new PessoaFiscica(null, null, null);
-         ContaPF ccpf = new ContaPF("1234-5", "10101-1", 0, pf);
+        Scanner sc = new Scanner(System.in);
+        PessoaFisica pf = new PessoaFisica(null, null, null);
+        ContaPF ccpf = new ContaPF("1234-5", "10101-1", 0, pf);
         PessoaJuridica pj = new PessoaJuridica(null, null, null, null);
-        ContaPJ ccpj = new ContaPj("1234-5", "20101-1", 0, pj); 
-      Scanner sc = new Scanner(System.in);
-      String pessoaTipo;
-      String opcao = null;
-      double valor; 
+        ContaPJ ccpj = new ContaPJ("1234-5", "20101-1", 0, pj);
 
+        String pessoaTipo;
+        String opcao = null;
+        double valor;
 
-      System.out.println("Escolha o tipo de pessoa que deseja cadastrar: ");
-      System.out.println("PF - PEssoa Fisica");
-      System.out.println("Pj - Pessoa Juridica");
-
-      pessoaTipo= sc.nextLine();
+        System.out.println("Escolha o tipo de pessoa que deseja cadastrar:");
+        System.out.println("PF - Pessoa Física");
+        System.out.println("PJ - Pessoa Jurídica");
+        pessoaTipo = sc.nextLine();
 
         switch (pessoaTipo) {
             case "PF":
-             
-               System.out.println("Informe o nome do usuario: ");
-               pf.setNome(sc.nextLine()); 
-               System.out.println("Informe o CPF do titular:");
-               pf.setCpf(sc.nextLine());
-                System.out.println("Informe o email do titular:");
+                System.out.println("Informe o nome do titular:");
+                pf.setNome(sc.nextLine());
+                System.out.println("Informe o CPF do titular:");
+                pf.setCpf(sc.nextLine());
+                System.out.println("Informe o e-mail do titular:");
                 pf.setEmail(sc.nextLine());
-            case "PJ":
-               
-                System.out.println("Informe a razao social: ");
-                pj.setRazaoSocial(sc.nextLine());
-                System.out.println("Informe o nome fantasia da empresa: ");
-                pj.setNomeFantasia(sc.nextLine());
-                System.out.println("Informe o CNPJ da empresa");
-                pj.setCnpj(sc.nextLine());
-                System.out.println("Informe o E-mail da empresa: ");
-                pj.setEmail(sc.nextLine());
-                
-                ccpj.setpj(pj);
+
+                ccpf.setPf(pf);
 
                 break;
-        
-            default:
-            System.out.println("PESSOA 404");
+            case "PJ":
+                System.out.println("Informe a razão social da empresa:");
+                pj.setRazaoSocial(sc.nextLine());
+                System.out.println("Informe o nome fantasia da empresa:");
+                pj.setNomeFantasia(sc.nextLine());
+                System.out.println("Informe o CNPJ da empresa:");
+                pj.setCnpj(sc.nextLine());
+                System.out.println("Informe o e-mail da empresa:");
+                pj.setEmail(sc.nextLine());
 
-            if ("PF".equals(pessoaTipo) ||"PJ".equals(pessoaTipo)){
+                ccpj.setPj(pj);
+
+                break;
+            default:
+                System.out.println("Pessoa 404");
+
+        } 
+        // se pessoaTipo for pessoa física ou pessoa jurídica
+        if ("PF".equals(pessoaTipo) || "PJ".equals(pessoaTipo)) {
             do {
-                System.out.println(" ------Opção Roubank------");
+                // menu
+                System.out.println("---- Opções do Roubank ----");
                 System.out.println("1 - Consultar dados da conta");
-                System.out.println("2 - Fazer deposito");
+                System.out.println("2 - Fazer depósito");
                 System.out.println("3 - Fazer saque");
                 System.out.println("4 - Sair do programa");
-                System.out.println("");
                 opcao = sc.nextLine();
-            
+
                 switch (opcao) {
                     case "1":
-                       if("PF".equals(pessoaTipo));{
-                       ccpf.exibirDados();    
-                }
-            }
-                else {
-                    ccpj.exibirDados();
+                        if ("PF".equals(pessoaTipo)) {
+                            ccpf.exibirDados();
+                        }
+                        else {
+                            ccpj.exibirDados();
+                        }
+                        break;
+                    case "2":
+                        System.out.println("Informe o valor do depósito em R$:");
+                        valor = sc.nextDouble();
 
+                        sc.nextLine();
+                        
+                        if ("PF".equals(pessoaTipo)) {
+                            if (valor > 0) {
+                                System.out.println("Valor depositado com sucesso.");
+                                System.out.println("Saldo atual: R$ " + ccpf.fazerDeposito(valor));
+                            }
+                            else {
+                                System.out.println("Valor inválido.");
+                            }
+                        }
+                        else {
+                            if (valor > 0) {
+                                System.out.println("Valor depositado com sucesso.");
+                                System.out.println("Saldo atual: R$ " + ccpj.fazerDeposito(valor));
+                            }
+                        }
+                        break;
+                    case "3":
+                        System.out.println("Informe o valor do saque em R$");
+                        valor = sc.nextDouble();
+
+                        sc.nextLine();
+
+                        if ("PF".equals(pessoaTipo)) {
+                            if (valor > 0 && valor <= ccpf.getSaldo()) {
+                                System.out.println("Saque efetuado com sucesso.");
+                                System.out.println("Saldo atual: R$ " + ccpf.fazerSaque(valor));
+                            }
+                            else {
+                                System.out.println("Valor do saque inválido.");
+                            }
+                        }
+                        else {
+                            if (valor > 0 && valor <= ccpj.getSaldo()) {
+                                System.out.println("Saque efetuado com sucesso.");
+                                System.out.println("Saldo atual: R$ " + ccpj.fazerSaque(valor));
+                            }
+                            else {
+                                System.out.println("Valor do saque inválido.");
+                            }
+                        }
+                        break;
+                    case "4":
+                        System.out.println("Programa encerrado.");
+                        System.out.println("Volte sempre.");
+                        break;
+                    default:
+                        System.out.println("Opção inválida.");
                 }
-                break;
             } while (!"4".equals(opcao));
         }
-        else{
-            System.out.println("Não foi possivel cadastrar novo titular");
-            System.out.println("Programa encerrado");
+        else {
+            System.out.println("Não foi possível cadastrar novo titular.");
+            System.out.println("Programa encerrado.");
         }
-        }
-     
-    }
- }
 
+        sc.close();
+
+    }
+}
