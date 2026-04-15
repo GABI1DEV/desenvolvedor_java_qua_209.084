@@ -1,6 +1,7 @@
 package com.atividade08.models;
 
-public class Pessoa {
+import com.atividade08.repository.Usuario;
+public class Pessoa implements Usuario {
     //ATRIBUTOS
     String nome;
     int idade;
@@ -31,5 +32,9 @@ public class Pessoa {
         this.idade = idade;
     }
 
+    @Override
+    public String verificarIdade() {
+        return (this.idade >= 18) ? "e maior de idade" : "e menor de idade";
+    }
 
 }
