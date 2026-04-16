@@ -11,7 +11,7 @@ public class App {
        //DECLARAÇAO DE ARRAYS
        String[] opcoes = {"Soma", "Subtração", "Mutiplicação", "Divisão", "Sair" };
        Object opcao;
-       String opcaoSelecionada = (String) opcao;
+       String opcaoSelecionada;
 
        do {
             opcao =JOptionPane.showInputDialog(
@@ -21,7 +21,7 @@ public class App {
                 JOptionPane.QUESTION_MESSAGE,
                 null, 
                 opcoes, 
-                opcao[0]
+                opcoes[0]
             );
 
             if (!opcao.equals("Sair")){
@@ -46,9 +46,10 @@ public class App {
                         break;
                 
                 }
+            }
 
             else {
-                JOptionPane.showMessageDialog(null, "Programa encerrado. ");
+                JOptionPane.showMessageDialog(null, "Programa encerrado");
             }
 
        } while (opcao != "Sair");
