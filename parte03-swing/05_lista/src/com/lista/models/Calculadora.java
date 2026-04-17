@@ -31,7 +31,7 @@ public class Calculadora implements Icalculadora {
     }
 
     @Override
-    public double mutiplicar() {
+    public double multiplicar() {
         return this.x*this.y;
     }
 
