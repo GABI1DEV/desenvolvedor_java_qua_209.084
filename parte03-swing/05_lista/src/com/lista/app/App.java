@@ -6,7 +6,7 @@ import com.lista.models.Calculadora;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Calculadora calc = new Calculadora(0, 0);
+        Calculadora calc = new Calculadora (0, 0);
 
         // declaração de arrays
         String[] opcoes = {"Soma", "Subtração", "Multiplicação", "Divisão", "Sair"};
