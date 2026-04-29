@@ -4,16 +4,16 @@ h1 {
     src: url(fonts/Lobster.otf);
     text-align: left;
     font-size: 250%; 
-    padding-left: 2%;
-
+    padding-left: 0px;
+    margin-left: 1px;
 }
 
 p {
     font-family: Arial;
-    text-align: center;
+    text-align: left;
     font-size: 90%; 
     padding-left: 0.4%;
-    padding-right: 65%;
+    padding-right: 60%;
     padding-top: 1%;
 
 }
@@ -22,10 +22,11 @@ h2 {
     font-family: Arial;
     text-align: center;
     font-size: 100%;
-    padding-right: 1%;
+    padding-right: 01%;
     padding-top: 1%;
 
 }
+
 h3 {
     font-family: arial;
     text-align: center;
@@ -33,10 +34,27 @@ h3 {
     padding-right: 1%;
     padding-top: 0.8%;
 }
+
 h4 {
     font-family: arial;
     text-align: center;
     font-size: 100%;
     padding-top: 0.5%;
 
+}
+h5{
+     font-family: arial;
+    text-align: left;
+    font-size: 100%;
+    padding-right: 1%;
+    padding-top: 0.8%;
+}
+
+aside {
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 100vh;
+  background: #dad8d8;
+  padding: 45px;
 }
