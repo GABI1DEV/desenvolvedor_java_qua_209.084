@@ -27,4 +27,6 @@ const maioridade = () => {
 
             //chama arrow function
             maioridade();
+             
+            console.log(maioridade());
         });
