@@ -4,44 +4,62 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
+        // instancia a classe Scanner
+        Scanner sc = new Scanner(System.in);
 
-        //VARIAVEIS
-
+        // declaração as variáveis
         String nome;
+        String result;
         double peso;
         double altura;
         double imc;
 
-        //INSTACIA A CLASSE ESCANNER
-
-        Scanner sc = new Scanner(System.in);
-
-        //ENTRADA DE DADOS
-
-        System.out.println("Informe seu nome: ");
+        // entrada de dados
+        System.out.println("Informe seu nome:");
         nome = sc.nextLine();
-        System.out.println("Informe seu pesoem kg: ");
+        System.out.println("Informe seu peso em kg:");
         peso = sc.nextDouble();
-        System.out.println("Informe sua altura: ");
+        System.out.println("Informe sua altura em metros:");
         altura = sc.nextDouble();
+
+        // cálculo do imc
         imc = peso/(altura*altura);
-        System.out.println(imc);
 
+        // mostra o imc para o usuário
+        System.out.println(nome + " seu IMC é " + String.format("%.2f", imc) + ".");
 
-        //CALCULAR IMC DO USUARIO
-        
-        if (imc >= 18.5 && imc <=25)
-        
-        
-            
+        // saída de dados (diagnóstico) pelo operador ternário
+        result = (imc < 18.5) ? " está abaixo do peso." :
+        (imc < 25) ? " está no peso ideal." :
+        (imc < 30) ? " está acima do peso." :
+        (imc < 35) ? " está obeso." :
+        (imc < 40) ? " está com obesidade nível II" :
+        " está com obesidade mórbida.";
 
+        // saída de dados
+        System.out.println(nome + result);
 
-        //SAIDA DE DADOS
+        // solução com if...else
+        if (imc < 18.5) {
+            System.out.println(nome + " está abaixo do peso.");
+        }
+        else if (imc < 25) {
+            System.out.println(nome + " está no peso ideal.");
+        }
+        else if (imc < 30) {
+            System.out.println(nome + " está acima do peso.");
+        }
+        else if (imc < 35) {
+            System.out.println(nome + " está obeso.");
+        }
+        else if (imc < 40) {
+            System.out.println(nome + " está com obesidade nível 2.");
+        }
+        else {
+            System.out.println(nome + " está com obesidade mórbida.");
+        }
 
-        
-
-        //FECHA OBJETO SCANNER
+        // fecha o objeto Scanner
         sc.close();
-
     }
 }
