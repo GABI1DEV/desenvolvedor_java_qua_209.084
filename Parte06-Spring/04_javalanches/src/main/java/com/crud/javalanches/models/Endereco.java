@@ -35,11 +35,9 @@ public class Endereco {
 
     @ManyToMany(mappedBy = "enderecos")
     private List<Cliente> clientes = new ArrayList<>();
-   
-   public Endereco() {
 
-   }
-
+    public Endereco() {
+    }
 
     public long getCodigoEndereco() {
         return this.codigoEndereco;
@@ -104,7 +102,6 @@ public class Endereco {
     public void setComplemento(String complemento) {
         this.complemento = complemento;
     }
-
 
     public List<Cliente> getClientes() {
         return this.clientes;

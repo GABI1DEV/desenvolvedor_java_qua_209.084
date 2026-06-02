@@ -1,5 +1,11 @@
 package com.crud.javalanches.models;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -8,12 +14,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Column;
-
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 public class Pedido {
@@ -21,30 +21,30 @@ public class Pedido {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long CodigoPedido;
+    private long codigoPedido;
 
     @Column(nullable = false)
     private LocalDateTime dataHoraPedido;
-    @Column(precision = 10, scale = 2, nullable =  false)
+    @Column(precision = 10, scale = 2, nullable = false)
     private BigDecimal valorTotalPedido;
 
     @ManyToMany
     @JoinTable(name = "pedido_produto", joinColumns = @JoinColumn(name = "pedido_id"), inverseJoinColumns = @JoinColumn(name = "produto_id"))
     private List<Produto> produtos = new ArrayList<>();
+
     @ManyToOne
     @JoinColumn(name = "cliente_id", nullable = false)
     private Cliente cliente;
 
     public Pedido() {
-
     }
 
     public long getCodigoPedido() {
-        return this.CodigoPedido;
+        return this.codigoPedido;
     }
 
-    public void setCodigoPedido(long CodigoPedido) {
-        this.CodigoPedido = CodigoPedido;
+    public void setCodigoPedido(long codigoPedido) {
+        this.codigoPedido = codigoPedido;
     }
 
     public LocalDateTime getDataHoraPedido() {
@@ -78,7 +78,5 @@ public class Pedido {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
-
-
 
 }

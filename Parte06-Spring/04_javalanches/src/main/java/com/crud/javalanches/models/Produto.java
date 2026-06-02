@@ -15,7 +15,7 @@ import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Produto {
-     private static long serialVersionUID = 1L;
+    private static long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,7 +25,7 @@ public class Produto {
     private String nomeProduto;
     @Column(length = 255)
     private String descricaoProduto;
-    @Column(nullable = false, precision = 10, scale = 2)
+    @Column(precision = 10, scale = 2, nullable = false)
     private BigDecimal precoProduto;
 
     @ManyToOne
@@ -35,10 +35,8 @@ public class Produto {
     @ManyToMany(mappedBy = "produtos")
     private List<Pedido> pedidos = new ArrayList<>();
 
-public Produto() {
-
-}   
-
+    public Produto() {
+    }
 
     public long getCodigoProduto() {
         return this.codigoProduto;
@@ -87,6 +85,5 @@ public Produto() {
     public void setPedidos(List<Pedido> pedidos) {
         this.pedidos = pedidos;
     }
-
 
 }

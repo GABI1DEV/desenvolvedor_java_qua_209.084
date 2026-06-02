@@ -3,10 +3,10 @@ package com.crud.javalanches.models;
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Column;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
@@ -17,6 +17,7 @@ public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long codigoCategoria;
+    
     @Column(unique = true, nullable = false)
     private String nomeCategoria;
 
@@ -24,7 +25,6 @@ public class Categoria {
     private List<Produto> produtos = new ArrayList<>();
 
     public Categoria() {
-
     }
 
     public List<Produto> getProdutos() {
@@ -34,7 +34,6 @@ public class Categoria {
     public void setProdutos(List<Produto> produtos) {
         this.produtos = produtos;
     }
-
 
     public long getCodigoCategoria() {
         return this.codigoCategoria;

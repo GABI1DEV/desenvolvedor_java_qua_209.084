@@ -16,14 +16,13 @@ import jakarta.persistence.OneToMany;
 
 @Entity
 public class Cliente {
-
-    //ATRIBUTOS
-
+    // atributos
     private static long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long codigoCliente;
+    
     @Column(nullable = false)
     private String nome;
     @Column(nullable = false, unique = true, length = 14)
@@ -31,10 +30,10 @@ public class Cliente {
     @Column(nullable = false, unique = true)
     private String email;
     @Column(nullable = false, unique = true, length = 16)
-    private String telefone; 
+    private String telefone;
     @Column(nullable = false)
     private LocalDate dataNascimento;
-   
+
     @OneToMany(mappedBy = "cliente")
     private List<Pedido> pedidos = new ArrayList<>();
 
@@ -42,10 +41,8 @@ public class Cliente {
     @JoinTable(name = "cliente_endereco", joinColumns = @JoinColumn(name = "cliente_id"), inverseJoinColumns = @JoinColumn(name = "endereco_id"))
     private List<Endereco> enderecos = new ArrayList<>();
 
-    public Cliente(){
-        
+    public Cliente() {
     }
-
 
     public long getCodigoCliente() {
         return this.codigoCliente;
