@@ -93,4 +93,17 @@ public class JavalanchesController {
         clienteRepository.save(cliente);
         return "cliente_sucesso";
     }
+
+    @GetMapping("/atualizarCategoria")
+    public String atualizarCategoria(@RequestParam("codigoCategoria") Long codigoCategoria, Model model) {
+        Categoria categoria = categoriaRepository.findById(codigoCategoria).orElse(null);
+        model.addAttribute("Categoria", categoria);
+        return "atualizar_categoria";
+    }
+    //FIXME:
+    @PostMapping("/atualizarCategoria")
+    public String atualizarCategoria(Categoria categoria) {
+        categoriaRepository.save(categoria);
+        return "atualizar_categoria_sucesso";
+    }
 }
