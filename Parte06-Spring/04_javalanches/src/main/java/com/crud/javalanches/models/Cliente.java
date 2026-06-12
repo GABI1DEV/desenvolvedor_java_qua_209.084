@@ -1,6 +1,5 @@
 package com.crud.javalanches.models;
 
-// REVIEW: revisar os imports
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
