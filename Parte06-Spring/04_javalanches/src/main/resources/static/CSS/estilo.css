@@ -1,0 +1,14 @@
+body {
+    padding-bottom: 80px; /* altura do footer */
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #c4c4c4;
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+}
