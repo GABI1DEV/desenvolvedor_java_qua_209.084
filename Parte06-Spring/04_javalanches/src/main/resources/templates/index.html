@@ -1,12 +1,105 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: main-layout(~{::title}, ~{::main})}">
+<html lang="pt-br"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: main-layout(~{::title}, ~{::main})}">
+
 <head>
-    <title>Javalanches Home Page</title>
+    <title>Java Lanches - Home</title>
 </head>
+
 <body>
-    <main>
-        <h1>Java Lanches Home Page</h1>
-        <hr>
-    </main>
+<main class="container">
+
+    <!-- Banner Principal -->
+    <section class="text-center">
+        <h1>🍔 Java Lanches</h1>
+        <p>Sabores incríveis preparados especialmente para você!</p>
+
+        <img src="/img/foto.jpg"
+             alt="Banner Java Lanches"
+             style="width:100%; max-height:400px; object-fit:cover; border-radius:10px;">
+    </section>
+
+    <hr>
+
+    <!-- Destaques -->
+    <section>
+        <h2>Nossos Destaques</h2>
+
+        <div style="display:flex; gap:20px; flex-wrap:wrap;">
+
+            <div style="width:300px; border:1px solid #ddd; border-radius:10px; overflow:hidden;">
+                <img src="/img/foto1.jpg."
+                     alt="Hambúrguer Artesanal"
+                     style="width:100%; height:200px; object-fit:cover;">
+                <div style="padding:15px;">
+                    <h3>Hambúrguer Artesanal</h3>
+                    <p>Pão macio, ingredientes selecionados e muito sabor.</p>
+                </div>
+            </div>
+
+            <div style="width:300px; border:1px solid #ddd; border-radius:10px; overflow:hidden;">
+                <img src="/img/foto2.jpg"
+                     alt="Pizza Especial"
+                     style="width:100%; height:200px; object-fit:cover;">
+                <div style="padding:15px;">
+                    <h3>Pizzas Especiais</h3>
+                    <p>Massas preparadas com carinho e recheios irresistíveis.</p>
+                </div>
+            </div>
+
+            <div style="width:300px; border:1px solid #ddd; border-radius:10px; overflow:hidden;">
+                <img src="/img/foto3.jpg"
+                     alt="Batata Frita"
+                     style="width:100%; height:200px; object-fit:cover;">
+                <div style="padding:15px;">
+                    <h3>Porções</h3>
+                    <p>Batatas crocantes e acompanhamentos para compartilhar.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- Sobre -->
+    <section>
+        <h2>Quem Somos</h2>
+        <p>
+            O Java Lanches nasceu para oferecer uma experiência deliciosa,
+            com ingredientes de qualidade e atendimento diferenciado.
+        </p>
+    </section>
+
+    <hr>
+
+    <!-- Galeria -->
+    <section>
+        <h2>Galeria</h2>
+
+        <div style="display:flex; gap:15px; flex-wrap:wrap;">
+            <img src="/img/foto4.jpg" alt="Lanche"
+                 style="width:250px; height:180px; object-fit:cover; border-radius:8px;">
+
+            <img src="/img/foto5.jpg" alt="Pastel"
+                 style="width:250px; height:180px; object-fit:cover; border-radius:8px;">
+
+            <img src="/img/foto6.jpg" alt="Suco"
+                 style="width:250px; height:180px; object-fit:cover; border-radius:8px;">
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- Contato -->
+    <section>
+        <h2>Contato</h2>
+        <p>📍 Venha conhecer nossa lanchonete.</p>
+        <p>📞 Entre em contato para fazer seu pedido.</p>
+        <p>🚚 Atendimento presencial e delivery.</p>
+    </section>
+
+</main>
 </body>
 </html>
